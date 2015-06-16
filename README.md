@@ -37,14 +37,13 @@ heroku addons:open scheduler -a ello-staging-nanny
 ```
 
 For every staging environment, create two jobs:  
+  
 One to put it to sleep:  
-
 ```
 APP=your_staging_environment /app/bin/sleep.sh
 ```
 
 And one to wake it up:  
-
 ```
 APP=your_staging_environment /app/bin/wake.sh
 ```
