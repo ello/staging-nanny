@@ -36,14 +36,10 @@ Now open it up, in your browser with:
 heroku addons:open scheduler -a ello-staging-nanny
 ```
 
-And add a job for every staging environment that simply runs:
+For every staging environment, create two jobs:  
+One to put it to sleep:  
+`APP=your_staging_environment /app/bin/sleep.sh`  
+And one to wake it up:  
+`APP=your_staging_environment /app/bin/wake.sh`
 
-```
-APP=your_staging_environment /app/bin/sleep.sh
-```
-
-And another that runs:
-
-```
-APP=your_staging_environment /app/bin/wake.sh
-```
+Use the "Daily" schedule option, and note that all times are UTC.
